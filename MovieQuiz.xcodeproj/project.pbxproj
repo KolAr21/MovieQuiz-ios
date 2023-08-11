@@ -10,8 +10,8 @@
 		2F5B18D92A85E39C00B499B7 /* QuizStepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5B18D82A85E39C00B499B7 /* QuizStepViewModel.swift */; };
 		2F5B18DB2A85E3C200B499B7 /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5B18DA2A85E3C200B499B7 /* QuizQuestion.swift */; };
 		2F5B18DD2A85E3DB00B499B7 /* QuizResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5B18DC2A85E3DB00B499B7 /* QuizResultsViewModel.swift */; };
-		2F5B18E72A85F8DC00B499B7 /* YS Display-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B18E52A85F8DC00B499B7 /* YS Display-Bold.ttf */; };
-		2F5B18E82A85F8DC00B499B7 /* YS Display-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B18E62A85F8DC00B499B7 /* YS Display-Medium.ttf */; };
+		2F5B18F22A863F7000B499B7 /* YS Display-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B18F02A863F7000B499B7 /* YS Display-Bold.ttf */; };
+		2F5B18F32A863F7000B499B7 /* YS Display-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B18F12A863F7000B499B7 /* YS Display-Medium.ttf */; };
 		AD1ABAB22831907B00B3E448 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1ABAB12831907B00B3E448 /* AppDelegate.swift */; };
 		AD1ABAB42831907B00B3E448 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1ABAB32831907B00B3E448 /* SceneDelegate.swift */; };
 		AD1ABAB62831907B00B3E448 /* MovieQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1ABAB52831907B00B3E448 /* MovieQuizViewController.swift */; };
@@ -27,8 +27,8 @@
 		2F5B18D82A85E39C00B499B7 /* QuizStepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizStepViewModel.swift; sourceTree = "<group>"; };
 		2F5B18DA2A85E3C200B499B7 /* QuizQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestion.swift; sourceTree = "<group>"; };
 		2F5B18DC2A85E3DB00B499B7 /* QuizResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultsViewModel.swift; sourceTree = "<group>"; };
-		2F5B18E52A85F8DC00B499B7 /* YS Display-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YS Display-Bold.ttf"; sourceTree = "<group>"; };
-		2F5B18E62A85F8DC00B499B7 /* YS Display-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YS Display-Medium.ttf"; sourceTree = "<group>"; };
+		2F5B18F02A863F7000B499B7 /* YS Display-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YS Display-Bold.ttf"; sourceTree = "<group>"; };
+		2F5B18F12A863F7000B499B7 /* YS Display-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YS Display-Medium.ttf"; sourceTree = "<group>"; };
 		AD1ABAAE2831907B00B3E448 /* MovieQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1ABAB12831907B00B3E448 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD1ABAB32831907B00B3E448 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,11 +63,11 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		2F5B18E42A85F8DC00B499B7 /* Fonts */ = {
+		2F5B18EF2A863F7000B499B7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				2F5B18E52A85F8DC00B499B7 /* YS Display-Bold.ttf */,
-				2F5B18E62A85F8DC00B499B7 /* YS Display-Medium.ttf */,
+				2F5B18F02A863F7000B499B7 /* YS Display-Bold.ttf */,
+				2F5B18F12A863F7000B499B7 /* YS Display-Medium.ttf */,
 			);
 			name = Fonts;
 			path = ../../../../Downloads/Fonts;
@@ -85,7 +85,7 @@
 		8F4738332848DE46005DF65E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2F5B18E42A85F8DC00B499B7 /* Fonts */,
+				2F5B18EF2A863F7000B499B7 /* Fonts */,
 				AD1ABABC2831907F00B3E448 /* LaunchScreen.storyboard */,
 				AD1ABABA2831907F00B3E448 /* Assets.xcassets */,
 				AD1ABABF2831907F00B3E448 /* Info.plist */,
@@ -194,8 +194,8 @@
 				AD1ABABE2831907F00B3E448 /* LaunchScreen.storyboard in Resources */,
 				AD1ABABB2831907F00B3E448 /* Assets.xcassets in Resources */,
 				AD1ABAB92831907B00B3E448 /* Main.storyboard in Resources */,
-				2F5B18E72A85F8DC00B499B7 /* YS Display-Bold.ttf in Resources */,
-				2F5B18E82A85F8DC00B499B7 /* YS Display-Medium.ttf in Resources */,
+				2F5B18F22A863F7000B499B7 /* YS Display-Bold.ttf in Resources */,
+				2F5B18F32A863F7000B499B7 /* YS Display-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
