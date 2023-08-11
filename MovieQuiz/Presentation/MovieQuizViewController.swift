@@ -91,8 +91,6 @@ final class MovieQuizViewController: UIViewController {
             self.correctAnswers = 0
             self.currentQuestionIndex = 0
             
-            //yesButton.isEnabled = true
-            //noButton.isEnabled = true
             let currentQuestion = questions[self.currentQuestionIndex]
             self.show(quiz: self.convert(model: currentQuestion))
         }
@@ -108,6 +106,7 @@ final class MovieQuizViewController: UIViewController {
     private func showAnswerResult(isCorrect: Bool) {
         yesButton.isEnabled = false
         noButton.isEnabled = false
+        
         if isCorrect {
             correctAnswers += 1
         }
