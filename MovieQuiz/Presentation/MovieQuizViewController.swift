@@ -1,5 +1,6 @@
 import UIKit
 
+
 final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     // MARK: - Lifecycle
     
@@ -28,8 +29,6 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     }
     
     override func viewDidLoad() {
-        print(NSHomeDirectory()) 
-        
         super.viewDidLoad()
         
         titleLabel.font = UIFont.medium(with: 20)

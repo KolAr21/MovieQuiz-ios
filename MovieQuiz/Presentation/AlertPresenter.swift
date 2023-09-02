@@ -7,10 +7,17 @@
 
 import UIKit
 
-class AlertPresenter: AlertPresenterProtocol {
+protocol  AlertPresenterProtocol {
+    func show(quiz result: AlertModel)
+}
+
+final class AlertPresenter: AlertPresenterProtocol {
     
     weak var delegate: MovieQuizViewController?
-    //let statistic: StatisticServiceImplementation?
+    
+    init(delegate: MovieQuizViewController) {
+        self.delegate = delegate
+    }
         
     func show(quiz result: AlertModel) {
         let alert = UIAlertController(title: result.title,
@@ -22,9 +29,5 @@ class AlertPresenter: AlertPresenterProtocol {
         
         alert.addAction(action)
         delegate?.present(alert, animated: true, completion: nil)
-    }
-    
-    init(delegate: MovieQuizViewController) {
-        self.delegate = delegate
     }
 }
