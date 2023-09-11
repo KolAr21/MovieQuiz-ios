@@ -8,7 +8,7 @@
 import UIKit
 
 protocol  AlertPresenterProtocol {
-    func show(quiz result: AlertModel)
+    func show(alertModel: AlertModel)
 }
 
 final class AlertPresenter: AlertPresenterProtocol {
@@ -19,12 +19,15 @@ final class AlertPresenter: AlertPresenterProtocol {
         self.delegate = delegate
     }
         
-    func show(quiz result: AlertModel) {
-        let alert = UIAlertController(title: result.title,
-                                      message: result.message,
-                                      preferredStyle: .alert)
-        let action = UIAlertAction(title: result.buttonText, style: .default) { _ in
-            result.completion()
+    func show(alertModel: AlertModel) {
+        let alert = UIAlertController(
+            title: alertModel.title,
+            message: alertModel.message,
+            preferredStyle: .alert)
+        let action = UIAlertAction(
+            title: alertModel.buttonText,
+            style: .default) { _ in
+            alertModel.completion()
         }
         
         alert.addAction(action)
