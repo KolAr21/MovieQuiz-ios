@@ -47,6 +47,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
         alertPresenter = AlertPresenter(delegate: self)
         statistic = StatisticServiceImplementation()
         
+        activityIndicator.hidesWhenStopped = true
         showLoadingIndicator()
         questionFactory?.loadData()
         questionFactory?.requestNextQuestion()
@@ -67,16 +68,17 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     // MARK: - Private functions
     
     private func showLoadingIndicator() {
-        activityIndicator.isHidden = false
         activityIndicator.startAnimating()
     }
     
     private func showNetworkError(message: String) {
-        DispatchQueue.main.async {
-            self.activityIndicator.isHidden = true
-            let alert = AlertModel(title: "Ошибка", message: message, buttonText: "Попробовать еще раз") { [weak self] in
-                guard let self  = self else { return }
-                
+        DispatchQueue.main.async { [weak self] in
+            guard let self  = self else { return }
+            self.activityIndicator.stopAnimating()
+            let alert = AlertModel(
+                title: "Ошибка",
+                message: message,
+                buttonText: "Попробовать еще раз") {
                 self.currentQuestionIndex = 0
                 self.correctAnswers = 0
                 self.questionFactory?.loadData()
@@ -172,7 +174,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     }
     
     func didLoadDataFromServer() {
-        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
         questionFactory?.requestNextQuestion()
     }
 
