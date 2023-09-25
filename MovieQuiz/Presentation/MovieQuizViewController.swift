@@ -33,6 +33,8 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        counterLabel.accessibilityIdentifier = "Index"
+        
         titleLabel.font = UIFont.medium(with: 20)
         counterLabel.font = UIFont.medium(with: 20)
         questionLabel.font = UIFont.bold(with: 23)
