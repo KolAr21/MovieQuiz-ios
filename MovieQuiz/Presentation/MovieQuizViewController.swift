@@ -35,6 +35,8 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
         
         counterLabel.accessibilityIdentifier = "Index"
         
+        presenter.viewController = self
+        
         titleLabel.font = UIFont.medium(with: 20)
         counterLabel.font = UIFont.medium(with: 20)
         questionLabel.font = UIFont.bold(with: 23)
@@ -58,13 +60,13 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     // MARK: - Actions
     
     @IBAction private func yesButtonTapped() {
-        guard let currentQuestion = currentQuestion else { return }
-        showAnswerResult(isCorrect: currentQuestion.correctAnswer)
+        presenter.currentQuestion = currentQuestion
+        presenter.yesButtonTapped()
     }
     
     @IBAction private func noButtonTapped() {
-        guard let currentQuestion = currentQuestion else { return }
-        showAnswerResult(isCorrect: !currentQuestion.correctAnswer)
+        presenter.currentQuestion = currentQuestion
+        presenter.noButtonTapped()
     }
     
     // MARK: - Private functions
@@ -96,7 +98,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
         counterLabel.text = step.questionNumber
     }
     
-    private func showAnswerResult(isCorrect: Bool) {
+    func showAnswerResult(isCorrect: Bool) {
         switchButton(is: false)
         
         if isCorrect {
