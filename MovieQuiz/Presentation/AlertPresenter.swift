@@ -18,7 +18,7 @@ final class AlertPresenter: AlertPresenterProtocol {
     init(delegate: MovieQuizViewController) {
         self.delegate = delegate
     }
-        
+    
     func show(alertModel: AlertModel) {
         let alert = UIAlertController(
             title: alertModel.title,
@@ -27,9 +27,9 @@ final class AlertPresenter: AlertPresenterProtocol {
         let action = UIAlertAction(
             title: alertModel.buttonText,
             style: .default) { _ in
-            alertModel.completion()
-        }
-    
+                alertModel.completion()
+            }
+        
         alert.view.accessibilityIdentifier = "Alert"
         alert.addAction(action)
         delegate?.present(alert, animated: true, completion: nil)

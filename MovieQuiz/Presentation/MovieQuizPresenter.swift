@@ -61,9 +61,9 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
             statistic?.store(correct: correctAnswers, total: questionsAmount)
             let text = createAlertMessage()
             let viewModel = QuizResultsViewModel(
-                            title: "Этот раунд окончен!",
-                            text: text,
-                            buttonText: "Сыграть ещё раз")
+                title: "Этот раунд окончен!",
+                text: text,
+                buttonText: "Сыграть ещё раз")
             viewController?.show(quiz: viewModel)
         } else {
             switchToNextIndex()
