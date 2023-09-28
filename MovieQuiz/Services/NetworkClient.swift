@@ -24,19 +24,19 @@ struct NetworkClient: NetworkRouting {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             
             if let error = error {
-                let answer = handler(.failure(error))
+                _ = handler(.failure(error))
                 return
             }
             
             if let response = response as? HTTPURLResponse {
                 if response.statusCode < 200 || response.statusCode >= 300 {
-                    let answer = handler(.failure(NetworkError.codeError))
+                    _ = handler(.failure(NetworkError.codeError))
                     return
                 } else {
                     guard let data = data else { return }
                     let answer = handler(.success(data))
                     if let answer = answer, !answer.isEmpty {
-                        let answer = handler(.failure(NetworkError.custom(message: answer)))
+                        _ = handler(.failure(NetworkError.custom(message: answer)))
                     }
                 }
             }

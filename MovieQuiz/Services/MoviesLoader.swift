@@ -25,7 +25,7 @@ struct MoviesLoader: MoviesLoading {
     }
     
     init(networkClient: NetworkRouting = NetworkClient()) {
-          self.networkClient = networkClient
+        self.networkClient = networkClient
     }
     
     func loadMovies(handler: @escaping (Result<MostPopularMovies, Error>) -> Void) {
