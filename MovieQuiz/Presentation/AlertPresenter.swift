@@ -29,7 +29,8 @@ final class AlertPresenter: AlertPresenterProtocol {
             style: .default) { _ in
             alertModel.completion()
         }
-        
+    
+        alert.view.accessibilityIdentifier = "Alert"
         alert.addAction(action)
         delegate?.present(alert, animated: true, completion: nil)
     }
