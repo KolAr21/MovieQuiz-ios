@@ -31,7 +31,7 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
         showAnswerResult(isCorrect: isYes == currentQuestion.correctAnswer)
     }
     
-    func isLastQuestion() -> Bool {
+    private func isLastQuestion() -> Bool {
         currentQuestionIndex == questionsAmount - 1
     }
     
@@ -41,11 +41,11 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
         questionFactory?.loadData()
     }
     
-    func switchToNextIndex() {
+    private func switchToNextIndex() {
         currentQuestionIndex += 1
     }
     
-    func didAnswer(isCorrectAnswer: Bool) {
+    private func didAnswer(isCorrectAnswer: Bool) {
         if (isCorrectAnswer) { correctAnswers += 1 }
     }
     
@@ -56,7 +56,7 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
             questionNumber: "\(currentQuestionIndex + 1)/\(questionsAmount)")
     }
     
-    func showNextQuestionOrResults() {
+    private func showNextQuestionOrResults() {
         if isLastQuestion() {
             statistic?.store(correct: correctAnswers, total: questionsAmount)
             let text = createAlertMessage()
@@ -83,13 +83,13 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
         }
     }
     
-    func createAlertModel() -> AlertModel {
+    private func createAlertModel() -> AlertModel {
         return AlertModel(title: "Этот раунд окончен!", message: createAlertMessage(), buttonText: "Сыграть еще раз") {
             self.restartGame()
         }
     }
     
-    func showAnswerResult(isCorrect: Bool) {
+    private func showAnswerResult(isCorrect: Bool) {
         viewController?.switchButton(is: false)
         didAnswer(isCorrectAnswer: isCorrect)
         

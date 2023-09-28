@@ -38,7 +38,7 @@ final class MovieQuizViewController: UIViewController, MovieQuizViewControllerPr
         
         presenter = MovieQuizPresenter(viewController: self)
         
-        fontsLabel()
+        setupLabels()
         
         posterImage.clipsToBounds = true
         posterImage.layer.cornerRadius = 20
@@ -59,7 +59,7 @@ final class MovieQuizViewController: UIViewController, MovieQuizViewControllerPr
     
     // MARK: - Private functions
     
-    private func fontsLabel() {
+    private func setupLabels() {
         titleLabel.font = UIFont.medium(with: 20)
         counterLabel.font = UIFont.medium(with: 20)
         questionLabel.font = UIFont.bold(with: 23)
@@ -124,7 +124,7 @@ final class MovieQuizViewController: UIViewController, MovieQuizViewControllerPr
         posterImage.layer.borderColor = isCorrectAnswer ? UIColor.ypGreen.cgColor : UIColor.ypRed.cgColor
     }
     
-     func switchButton(is enabled: Bool) {
+    func switchButton(is enabled: Bool) {
         yesButton.isEnabled = enabled
         noButton.isEnabled = enabled
     }
